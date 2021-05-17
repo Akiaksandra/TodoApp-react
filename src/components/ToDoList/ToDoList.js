@@ -4,8 +4,6 @@ import './ToDoList.css';
 
 const ToDoList = ( { items, onDeleted, onToggleImportant, onToggleDone }) => { 
 
-  
-
   const elements = items.map((item) => {
 
     const { id, ...itemProps } = item;

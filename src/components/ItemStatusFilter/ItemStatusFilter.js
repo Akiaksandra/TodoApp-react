@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './ItemStatusFilter.css';
 
-class ItemStatusFilter extends Component {
+const ItemStatusFilter = (props) => {
 
-  filterButtons = [
+  const filterButtons = [
     { name: 'all', label: 'All' },
     { name: 'active', label: 'Active' },
     { name: 'done', label: 'Done' }
   ]
 
-  render() {
-
-    const { filter, onFilterChange } = this.props;
-    const buttons = this.filterButtons.map(({ name, label }) => {
+    const { filter, onFilterChange } = props;
+    const buttons = filterButtons.map(({ name, label }) => {
       const isActive = name === filter;
       const classNames = 'btn ' + (isActive ? 'btn-info' : 'btn-outline-secondary');
-
       return (
         <button key={name}
               type="button"
@@ -30,7 +27,6 @@ class ItemStatusFilter extends Component {
         {buttons}
       </div>
     );
-  }
 }
 
 export default ItemStatusFilter;
